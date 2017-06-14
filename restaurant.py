@@ -42,6 +42,7 @@ class CustomerThread(threading.Thread):
     def run(self):
         print("Waiting for cashier")
         self.semaphore.acquire()
+        print("Payment started ...")
         time.sleep(5)
         print("Leaving restaurant - " + self.getName())
         self.semaphore.release()
